@@ -7,10 +7,15 @@ app.config(function (mdlConfigProvider) {
 });
 
 app.controller('itCtrl', function ($scope) {
-	if(!localStorage.getObject("entries"))
+	
+	//Load data from local storage
+	if(!localStorage.getObject("entries")) {
 		$scope.entries = [];
-	else
+	} else {
 		$scope.entries = localStorage.getObject('entries');
+	}
+	
+	// Add an entry
 	$scope.addFunction = function () {
 		if (($scope.task !== "") && ($scope.task)) {
 			console.log('clicked ' + $scope.task);
@@ -25,19 +30,22 @@ app.controller('itCtrl', function ($scope) {
 		if (keyEvent.which === 13)
 			$scope.addFunction();
 	}
+	
+	//Debug
 	console.log($scope.someone);
 });
 
 function parse(currentTask, length) {
+	
 	var functionList = ["call", "email", "mail", "watch", "listen", "read", "go", "link", "text", "message"];
 	var iconList = ["phone", "email", "email", "play_circle_outline", "music_note", "description", "location_on", "link", "message", "message"]; // Material icons
 	var entry = {};
 	var currentFunction = currentTask.toLowerCase().match(/^([\w\-]+)/g).toString();
+	var whichFunction = 0;
 
 	entry.id = length + 1;
 	entry.text = currentTask;
 	entry.function = [];
-	var whichFunction = 0;
 
 	console.log("currentFunction :: " + currentFunction);
 
@@ -51,7 +59,7 @@ function parse(currentTask, length) {
 
 	console.log("whichFunction :: " + whichFunction);
 
-
+	// Map function to icon
 	if (whichFunction >= 0) {
 		entry.function.push(iconList[whichFunction]);
 	}
