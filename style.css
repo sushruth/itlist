@@ -8,11 +8,19 @@ html {
 
 .entry {
 	min-height:auto;
-	padding:5px 15px;
+	padding:10px 20px;
+	position: relative;
 }
 
 .entry label {
 	height:auto;
+}
+
+.icon-links {
+	position:absolute;
+	left:calc(100% + 10px);
+	top:7px;
+	display: inline-block;
 }
 
 h3 {
@@ -20,6 +28,25 @@ h3 {
 	margin-left: 10px;
 }
 
-#add {
-	margin:0 20px;width:90%;box-sizing:border-box;
+.mdl-textfield {
+	margin:0 20px;
+	width:100%;
+	box-sizing:border-box;
+}
+
+.mdl-checkbox.is-checked {
+	text-decoration: line-through;
+	color:#aaa;
+}
+
+.mdl-checkbox.is-checked .icon-links {
+	opacity: 0.2;
+}
+
+.mdl-checkbox.is-checked .mdl-checkbox__tick-outline {
+	background-color: #aaa;
+}
+
+.mdl-checkbox.is-checked .mdl-checkbox__box-outline {
+	border-color: #aaa;
 }
