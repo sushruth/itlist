@@ -31,6 +31,12 @@ app.controller('itCtrl', function ($scope) {
 			$scope.addFunction();
 	}
 	
+	//Clearing data
+	$scope.clearData = function() {
+		$scope.entries = [];
+		localStorage.clear();
+	}
+	
 	//Debug
 	console.log($scope.someone);
 });
@@ -46,6 +52,7 @@ function parse(currentTask, length) {
 	entry.id = length + 1;
 	entry.text = currentTask;
 	entry.function = [];
+	entry.status = 0;
 
 	console.log("currentFunction :: " + currentFunction);
 

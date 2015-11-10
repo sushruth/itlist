@@ -4,6 +4,7 @@ html {
 
 #main {
 	background:#fff;
+	position:relative;
 }
 
 .entry {

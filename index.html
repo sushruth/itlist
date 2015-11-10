@@ -32,8 +32,14 @@
 	<div class="mdl-grid">
 		<div class="mdl-cell mdl-cell--4-col mdl-cell--2-col-tablet">&nbsp;</div>
 		<div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
-			<div style="text-align:center;"><i class="material-icons">menu</i><h3>itList</h3></div>
+			<div style="text-align:center;"><i class="material-icons">menu</i>
+				<h3>itList</h3></div>
 			<div class="mdl-shadow--2dp" id="main" style="padding:10px 0;">
+				<div class="icon-links">
+					<button class="mdl-button mdl-js-button mdl-button--icon" ng-click="clearData()">
+						<i class="material-icons">delete</i>
+					</button>
+				</div>
 				<table style="width:100%;">
 					<tbody>
 						<tr>
@@ -56,13 +62,13 @@
 							<i class="material-icons">{{func}}</i>
 						</button>
 					</div>
-					<mdl-checkbox id="entry-{{entry.id}}" mdl-upgrade label="{{entry.text}}">Checking where this goes</mdl-checkbox>
+					<mdl-checkbox id="entry-{{entry.id}}" ng-checked="{{entry.status}}" mdl-upgrade label="{{entry.text}}">Checking where this goes</mdl-checkbox>
 				</div>
 			</div>
 		</div>
 		<div class="mdl-cell mdl-cell--4-col mdl-cell--2-col-tablet">&nbsp;</div>
 	</div>
-	
+
 </body>
 
 </html>
