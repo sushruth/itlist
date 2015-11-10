@@ -6,13 +6,6 @@ app.config(function (mdlConfigProvider) {
 	mdlConfigProvider.rippleEffect = false;
 });
 
-// Preserve html in text angularJS. Credit :: http://creative-punch.net/2014/04/preserve-html-text-output-angularjs/
-app.filter('unsafe', function ($sce) {
-    return function (val) {
-        return $sce.trustAsHtml(val);
-    };
-});
-
 app.controller('itCtrl', function ($scope) {
 	if(!localStorage.getObject("entries"))
 		$scope.entries = [];
