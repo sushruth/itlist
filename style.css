@@ -1,0 +1,25 @@
+html {
+	background:#efefef;
+}
+
+#main {
+	background:#fff;
+}
+
+.entry {
+	min-height:auto;
+	padding:5px 15px;
+}
+
+.entry label {
+	height:auto;
+}
+
+h3 {
+	display: inline-block;
+	margin-left: 10px;
+}
+
+#add {
+	margin:0 20px;width:90%;box-sizing:border-box;
+}
